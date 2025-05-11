@@ -1,0 +1,14 @@
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\bin\Debug\net7.0\DataServices.deps.json
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\bin\Debug\net7.0\DataServices.runtimeconfig.json
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\bin\Debug\net7.0\DataServices.dll
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\bin\Debug\net7.0\DataServices.pdb
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\DataServices.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\DataServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\DataServices.AssemblyInfoInputs.cache
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\DataServices.AssemblyInfo.cs
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\DataServices.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\DataServices.dll
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\refint\DataServices.dll
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\DataServices.pdb
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\DataServices.genruntimeconfig.cache
+C:\Users\danie\OneDrive - Universidad Rafael Landivar\Escritorio\Guías Personales\Projects\digital-transformation-office\MFSD-Solution\DataServices\obj\Debug\net7.0\ref\DataServices.dll
