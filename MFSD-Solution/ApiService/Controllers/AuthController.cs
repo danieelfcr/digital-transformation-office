@@ -5,6 +5,8 @@ using WebAPI.DTOs;
 
 namespace ApiService.Controllers
 {
+    [ApiController]
+    [Route ("api/[controller]")]
     public class AuthController : ControllerBase
     {
         private readonly AppDbContext _context;

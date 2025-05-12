@@ -7,7 +7,7 @@ namespace WebAPI.DTOs
     {
         [Required]
         [EmailAddress]
-        [ValidEmailDomain("dto.com", ErrorMessage = "Solo se permiten correos con el dominio midominio.com.")]
+        [ValidEmailDomain("dto.com", ErrorMessage = "Only acceptable domain is dto.com.")]
         public string Email { get; set; }
 
         [Required]
