@@ -9,10 +9,20 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     public DbSet<User> Users { get; set; }
+    public DbSet<Transaction> Transactions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<Transaction>()
+            .HasOne(t => t.User)
+            .WithMany(u => u.Transactions)
+            .HasForeignKey(t => t.UserId);
+
+        //Precise ExchangeRateUsed
+        modelBuilder.Entity<Transaction>()
+            .Property(t => t.ExchangeRateUsed)
+            .HasColumnType("decimal(18, 2)");
 
         //Hashed paswords
         var adminPassword = BCrypt.Net.BCrypt.HashPassword("admin");
