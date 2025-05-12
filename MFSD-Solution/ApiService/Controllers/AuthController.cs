@@ -35,7 +35,7 @@ namespace ApiService.Controllers
             var greeting = hour < 12 ? "Good morning" : (hour < 18 ? "Good afternoon" : "Good evening");
             var message = $"{greeting}, {user.Name}!";
 
-            return Ok(new { user.Email, user.Name, message});
+            return Ok(new { user.Id, message});
 
         }
     }

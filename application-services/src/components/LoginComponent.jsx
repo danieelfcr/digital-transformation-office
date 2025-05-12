@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './LoginComponent.css';
 
 export const LoginComponent = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [message, setMessage] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,8 +26,9 @@ export const LoginComponent = () => {
         email,
         password
       });
-
-      setMessage('Login Ok!');
+      sessionStorage.setItem('message', response.data.message);
+      sessionStorage.setItem('id', response.data.id)
+      navigate('/dashboard');
       // localStorage.setItem('token', response.data.token);
     } catch (err) {
       if (err.response) {

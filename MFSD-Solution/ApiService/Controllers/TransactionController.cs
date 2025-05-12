@@ -41,5 +41,48 @@ namespace DataServices.Controllers
 
             return CreatedAtAction(nameof(CreateTransaction), new { id = transaction.Id }, transaction);
         }
+
+        // GET api/transaction/recent/{userId}
+        [HttpGet("recent/{userId}")]
+        public async Task<IActionResult> GetRecentTransactions(int userId)
+        {
+            var transactions = await _context.Transactions
+                .Include(t => t.User)
+                .Where(t => t.UserId == userId)
+                .OrderByDescending(t => t.Timestamp)
+                .Take(20)
+                .Select(t => new
+                {
+                    Username = t.User.Name,
+                    SourceCurrency = t.SourceCurrency,
+                    DestinationCurrency = t.DestinationCurrency,
+                    ExchangeRate = t.ExchangeRateUsed,
+                    DateTime = t.Timestamp
+                })
+                .ToListAsync();
+
+            if (!transactions.Any())
+            {
+                return Ok("No recent transactions.");
+            }
+
+            return Ok(transactions);
+        }
+
+
+        // GET api/transaction/count-today/{userId}
+        [HttpGet("count-today/{userId}")]
+        public async Task<IActionResult> GetTodayTransactionCount(int userId)
+        {
+            var today = DateTime.UtcNow.Date;
+
+            var count = await _context.Transactions
+                .Where(t => t.UserId == userId && t.Timestamp.Date == today)
+                .CountAsync();
+
+            return Ok(new { message = $"Total Transactions Today: {count}" });
+        }
+
+
     }
 }

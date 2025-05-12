@@ -1,0 +1,63 @@
+
+.rates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #f3f4f6;
+}
+
+.rate-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.rate-card:hover {
+  transform: translateY(-4px);
+}
+
+.rate-card strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #1f2937;
+}
+
+.rate-name {
+  margin-top: 0.3rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.rate-date {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 2rem auto 1rem auto;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+p {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1rem;
+}

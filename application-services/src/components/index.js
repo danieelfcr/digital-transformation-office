@@ -1,1 +1,6 @@
 export { LoginComponent } from './LoginComponent'
+export { ExchangeRates } from './ExchangeRates'
+export { CurrencyConverter } from './CurrencyConverter'
+export { FeedbackForm } from './FeedbackForm'
+export { TransactionLog } from './TransactionLog'
+export { TransactionCount } from './TransactionCount' 
