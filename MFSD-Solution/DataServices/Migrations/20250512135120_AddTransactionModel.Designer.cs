@@ -4,6 +4,7 @@ using DataServices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataServices.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250512135120_AddTransactionModel")]
+    partial class AddTransactionModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,34 +24,6 @@ namespace DataServices.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("DataServices.Models.Feedback", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Comment")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("FeedbackDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Feedbacks");
-                });
 
             modelBuilder.Entity("DataServices.Models.Transaction", b =>
                 {
@@ -116,7 +91,7 @@ namespace DataServices.Migrations
                             Email = "admin@dto.com",
                             IsAdmin = true,
                             Name = "Admin",
-                            Password = "$2a$11$uicb0s71Wm7ae0Iv/RDDg.z3hvmpVF.TqLwWvz/f9mel.kfYi9H76"
+                            Password = "$2a$11$DJZlvLov3AwnbLAjGLw8juLeD33pPuzZJv6QEfxYTtsfTbPizjOKC"
                         },
                         new
                         {
@@ -124,7 +99,7 @@ namespace DataServices.Migrations
                             Email = "daniel@dto.com",
                             IsAdmin = false,
                             Name = "Daniel",
-                            Password = "$2a$11$dwSWULtbpNOMFjyEkDI/xeZKx1cV/eGINAPWoVvaossaLcsNQGxFe"
+                            Password = "$2a$11$l/3XUN8wbJ3Mf5gUEJ1RBOz7hGdnVgyLXaw/6mRx0jlc31q29zGMW"
                         },
                         new
                         {
@@ -132,19 +107,8 @@ namespace DataServices.Migrations
                             Email = "hector@dto.com",
                             IsAdmin = false,
                             Name = "Hector",
-                            Password = "$2a$11$4.OyXnr7tvgmvyrt.laeGulVGcTG9NsnELz2bju6cEdgYuT7ukbTq"
+                            Password = "$2a$11$Gw.p1L9xb31GastqIZuUzevpSTY4lmpFtB54yENHTY.Q26rxATIN6"
                         });
-                });
-
-            modelBuilder.Entity("DataServices.Models.Feedback", b =>
-                {
-                    b.HasOne("DataServices.Models.User", "User")
-                        .WithMany("Feedbacks")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DataServices.Models.Transaction", b =>
@@ -160,8 +124,6 @@ namespace DataServices.Migrations
 
             modelBuilder.Entity("DataServices.Models.User", b =>
                 {
-                    b.Navigation("Feedbacks");
-
                     b.Navigation("Transactions");
                 });
 #pragma warning restore 612, 618

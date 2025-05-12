@@ -20,5 +20,8 @@ namespace DataServices.Models
         public string Password { get; set; }
         [Required]
         public bool IsAdmin { get; set; }
+
+        public virtual ICollection<Transaction> Transactions { get; set; }
+        public ICollection<Feedback> Feedbacks { get; set; }
     }
 }
