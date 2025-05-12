@@ -10,6 +10,7 @@ public class AppDbContext : DbContext
 
     public DbSet<User> Users { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
+    public DbSet<Feedback> Feedbacks { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -18,6 +19,11 @@ public class AppDbContext : DbContext
             .HasOne(t => t.User)
             .WithMany(u => u.Transactions)
             .HasForeignKey(t => t.UserId);
+
+        modelBuilder.Entity<Feedback>()
+            .HasOne(f => f.User)
+            .WithMany(u => u.Feedbacks)
+            .HasForeignKey(f => f.UserId);
 
         //Precise ExchangeRateUsed
         modelBuilder.Entity<Transaction>()

@@ -32,7 +32,7 @@ namespace DataServices.Controllers
                 SourceCurrency = transactionDto.SourceCurrency,
                 DestinationCurrency = transactionDto.DestinationCurrency,
                 ExchangeRateUsed = transactionDto.ExchangeRateUsed,
-                Timestamp = transactionDto.Timestamp
+                Timestamp = DateTime.UtcNow
             };
 
             //Post transaction on db

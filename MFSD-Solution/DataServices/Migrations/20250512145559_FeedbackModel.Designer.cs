@@ -4,6 +4,7 @@ using DataServices;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataServices.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250512145559_FeedbackModel")]
+    partial class FeedbackModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +50,7 @@ namespace DataServices.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Feedbacks");
+                    b.ToTable("Feedback");
                 });
 
             modelBuilder.Entity("DataServices.Models.Transaction", b =>
@@ -116,7 +119,7 @@ namespace DataServices.Migrations
                             Email = "admin@dto.com",
                             IsAdmin = true,
                             Name = "Admin",
-                            Password = "$2a$11$uicb0s71Wm7ae0Iv/RDDg.z3hvmpVF.TqLwWvz/f9mel.kfYi9H76"
+                            Password = "$2a$11$kLZxGJcSXhkD1MLHmrnxVuRz1Uya3LrR4cVL6deq7FxfqyDgkw5cC"
                         },
                         new
                         {
@@ -124,7 +127,7 @@ namespace DataServices.Migrations
                             Email = "daniel@dto.com",
                             IsAdmin = false,
                             Name = "Daniel",
-                            Password = "$2a$11$dwSWULtbpNOMFjyEkDI/xeZKx1cV/eGINAPWoVvaossaLcsNQGxFe"
+                            Password = "$2a$11$Bmw6/jvvdSl0DkY6CAXke.AJb6Q5QBnNSWrTANx6f9XNKxRFKS1yi"
                         },
                         new
                         {
@@ -132,7 +135,7 @@ namespace DataServices.Migrations
                             Email = "hector@dto.com",
                             IsAdmin = false,
                             Name = "Hector",
-                            Password = "$2a$11$4.OyXnr7tvgmvyrt.laeGulVGcTG9NsnELz2bju6cEdgYuT7ukbTq"
+                            Password = "$2a$11$4w62kqf0jHnHRYRHLAVG5OrAK.IUeYH7HZO2arJXrayVYCuZvPLgu"
                         });
                 });
 

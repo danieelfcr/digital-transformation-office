@@ -16,7 +16,5 @@ namespace ApiService.DTOs
         [Required]
         public decimal ExchangeRateUsed { get; set; }
 
-        [Required]
-        public DateTime Timestamp { get; set; }
     }
 }
