@@ -22,5 +22,6 @@ namespace DataServices.Models
         public bool IsAdmin { get; set; }
 
         public virtual ICollection<Transaction> Transactions { get; set; }
+        public ICollection<Feedback> Feedbacks { get; set; }
     }
 }

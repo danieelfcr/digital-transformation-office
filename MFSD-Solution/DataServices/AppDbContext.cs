@@ -19,6 +19,11 @@ public class AppDbContext : DbContext
             .WithMany(u => u.Transactions)
             .HasForeignKey(t => t.UserId);
 
+        modelBuilder.Entity<Feedback>()
+            .HasOne(f => f.User)
+            .WithMany(u => u.Feedbacks)
+            .HasForeignKey(f => f.UserId);
+
         //Precise ExchangeRateUsed
         modelBuilder.Entity<Transaction>()
             .Property(t => t.ExchangeRateUsed)
