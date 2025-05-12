@@ -1,0 +1,73 @@
+.currency-converter {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.currency-converter h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.currency-converter label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.currency-converter input,
+.currency-converter select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.currency-converter button {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.currency-converter button:hover {
+  background-color: #1d4ed8;
+}
+
+.currency-converter p {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.currency-converter .result {
+  margin-top: 1rem;
+  background-color: #e0f2fe;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #0c4a6e;
+  font-weight: 500;
+}
+
+.currency-converter .error {
+  color: #dc2626;
+  text-align: center;
+  margin-top: 0.5rem;
+}

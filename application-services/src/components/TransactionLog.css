@@ -1,0 +1,11 @@
+.transaction-log {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.transaction-entry {
+  margin-bottom: 8px;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
