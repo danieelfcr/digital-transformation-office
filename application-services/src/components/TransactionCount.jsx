@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const TransactionCount = ({ userId }) => {
+export const TransactionCount = () => {
   const [transactionCount, setTransactionCount] = useState(null);
-
+  const userId = sessionStorage.getItem('id');
   useEffect(() => {
     if (userId) {
       axios

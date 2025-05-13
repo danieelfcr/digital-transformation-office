@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './DashboardPage.css';
-import { ExchangeRates, CurrencyConverter, FeedbackForm, TransactionLog, TransactionCount } from '../components'
+import {
+  ExchangeRates,
+  CurrencyConverter,
+  FeedbackForm,
+  TransactionLog,
+  TransactionCount,
+  WelcomeMessage,
+} from '../components';
 
 export const DashboardPage = () => {
   const [welcomeMessage, setWelcomeMessage] = useState('');
@@ -14,8 +21,11 @@ export const DashboardPage = () => {
 
   return (
     <div className="dashboard-container">
-      <header className="welcome-message">{welcomeMessage}</header>
-      <main className="dashboard-main">
+      <header className="welcome-message">
+        <WelcomeMessage />
+      </header>
+
+      <main className="dashboard-grid">
         <section className="rates-section">
           <h2>Exchange Rates</h2>
           <ExchangeRates />
@@ -26,18 +36,18 @@ export const DashboardPage = () => {
           <CurrencyConverter />
         </section>
 
-        <section className="feedback-section">
-          <h2>Feedback</h2>
-          <FeedbackForm />
+        <section className="bottom-section">
+          <div className="feedback-container">
+            <h2>Feedback</h2>
+            <FeedbackForm />
+          </div>
+
+          <div className="transactions-container">
+            <TransactionCount />
+            <TransactionLog />
+          </div>
         </section>
       </main>
-
-      <aside className="sidebar">
-        <TransactionCount />
-        <TransactionLog />
-      </aside>
     </div>
   );
 };
-
-
