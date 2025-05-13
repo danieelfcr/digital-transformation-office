@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './CurrencyConverter.css';
+import currencyCodes from '../data/codes.json'
 import axios from 'axios';
 
 export const CurrencyConverter = () => {
@@ -74,19 +75,21 @@ export const CurrencyConverter = () => {
           onChange={(e) => setSourceCurrency(e.target.value)}
         >
           <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-
         </select>
       </div>
       <div>
         <label>To: </label>
-        <input
-          type="text"
+        <select
           value={destinationCurrency}
           onChange={(e) => setDestinationCurrency(e.target.value)}
-          placeholder="Enter destination currency"
-        />
+        >
+          <option value="">Select destination currency</option>
+          {currencyCodes.map((code) => (
+            <option key={code} value={code}>
+              {code}
+            </option>
+          ))}
+        </select>
       </div>
       <button onClick={handleConversion}>Convert</button>
       {error && <p className="error">{error}</p>}
