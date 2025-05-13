@@ -7,7 +7,7 @@ export const ExchangeRates = () => {
   const [search, setSearch] = useState('');
   const [lastUpdate, setLastUpdate] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const ratesPerPage = 20;
+  const ratesPerPage = 9;
 
   const apiKey = process.env.REACT_APP_EXCHANGE_RATE_API_KEY;
 
@@ -28,13 +28,9 @@ export const ExchangeRates = () => {
     currencyData.map(item => [item.AlphabeticCode, item.Currency])
   );
 
-  const filteredRates = rates.filter(r => {
-    const codeMatch = r.code.toUpperCase().includes(search.toUpperCase());
-    const nameMatch = (currencyNames[r.code] || '')
-      .toUpperCase()
-      .includes(search.toUpperCase());
-    return codeMatch || nameMatch;
-  });
+  const filteredRates = rates.filter(r =>
+    r.code.toUpperCase().includes(search.toUpperCase())
+  );
 
   //Pagination
   const totalPages = Math.ceil(filteredRates.length / ratesPerPage);

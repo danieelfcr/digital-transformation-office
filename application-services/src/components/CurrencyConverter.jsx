@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import './CurrencyConverter.css';
 import axios from 'axios';
 
-export const CurrencyConverter = ({ userId }) => {
+export const CurrencyConverter = () => {
   const [amount, setAmount] = useState('');
   const [sourceCurrency, setSourceCurrency] = useState('USD');
   const [destinationCurrency, setDestinationCurrency] = useState('');
   const [convertedAmount, setConvertedAmount] = useState(null);
   const [exchangeRate, setExchangeRate] = useState(null);
   const [error, setError] = useState(null);
+
+  const userId = sessionStorage.getItem('id')
 
   const handleConversion = () => {
     if (amount && destinationCurrency) {
